@@ -33,6 +33,18 @@ export default function TextForm(props) {
     setText(event.target.value);
   };
 
+  const handleCopy = (event) => {
+    // console.log("I am copy");
+    var text = document.getElementById("mybox");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+  };
+
+  const handleExtraSpaces = (event) => {
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "));
+  };
+
   const [text, setText] = useState("");
   // text = "new text here"; //wrong way to change the state;
   // setText("new text here"); //correct way to change the state;
@@ -61,6 +73,12 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary mx-2" onClick={handleNumberClick}>
           Convert paragraph into points
+        </button>
+        <button className="btn btn-primary mx-2" onClick={handleCopy}>
+          Copy text
+        </button>
+        <button className="btn btn-primary mx-2" onClick={handleExtraSpaces}>
+          Remove extra spaces
         </button>
       </div>
       <div className="container my-3">
