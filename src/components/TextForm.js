@@ -24,8 +24,8 @@ export default function TextForm(props) {
 
   // to convert a paragraph into points
   const handleNumberClick = () => {
-    let newText = text.split(". ");
-    setText(newText);
+    // let newText = text.split(". ");
+    // setText(newText);
   };
 
   const handleOnChange = (event) => {
