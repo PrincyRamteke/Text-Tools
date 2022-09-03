@@ -36,6 +36,12 @@ export default function Navbar(props) {
               </Link>
             </li>
           </ul>
+          <div className="d-flex">
+            <div
+              className="bg-primary rounded mx-2"
+              style={{ height: "25px", width: "25px" }}
+            ></div>
+          </div>
           <div
             className={`form-check form-switch text-${
               props.mode === "light" ? "dark" : "light"

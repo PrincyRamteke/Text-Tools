@@ -22,7 +22,7 @@ function App() {
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
-      document.body.style.backgroundColor = "#244474";
+      document.body.style.backgroundColor = "#13466e";
       showAlert("Dark mode has been enabled", "success");
       // document.title = "TextTools - DarkMode";
     } else {
@@ -45,7 +45,10 @@ function App() {
           about="About Us"
         />
         <Alert alert={alert} />
-        <div className="container my-3">
+        <div
+          className="container my-3"
+          style={{ padding: "0px 100px 0px 100px" }}
+        >
           <Routes>
             <Route
               exact
@@ -53,12 +56,12 @@ function App() {
               element={
                 <TextForm
                   showAlert={showAlert}
-                  heading="Enter the text below to analyze"
+                  heading="Try TextTools - Convert to Uppercase, lowercase, remove extra spaces"
                   mode={mode}
                 />
               }
             />
-            <Route exact path="/about" element={<About />} />
+            <Route exact path="/about" element={<About mode={mode} />} />
           </Routes>
         </div>
       </Router>
