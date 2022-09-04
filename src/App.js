@@ -19,7 +19,17 @@ function App() {
       setAlert(null);
     }, 2000);
   };
-  const toggleMode = () => {
+
+  const removeBodyClasses = () => {
+    document.body.classList.remove("bg-light");
+    document.body.classList.remove("bg-dark");
+    document.body.classList.remove("bg-success");
+    document.body.classList.remove("bg-warning");
+    document.body.classList.remove("bg-danger");
+  };
+  const toggleMode = (cls) => {
+    removeBodyClasses();
+    document.body.classList.add("bg-" + cls);
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#13466e";
@@ -47,7 +57,7 @@ function App() {
         <Alert alert={alert} />
         <div
           className="container my-3"
-          style={{ padding: "0px 100px 0px 100px" }}
+          style={{ padding: "0px 29px 0px 29px" }}
         >
           <Routes>
             <Route
